@@ -1,13 +1,39 @@
 .home {
 
+  .fun-bus-img {
+      margin-bottom: 3rem;
+  }
+
+  @media @mobile{
+      width:95%;
+      margin: auto;
+  }
+
+  @media @mobile{
+    .fun-bus-img{
+      width:98%;
+      margin: auto;
+    }
+  }
+
+  .welcome {
+    padding-bottom: 1.8rem;
+    border-bottom: 1px dashed gray;
+  }
+
+  @media @mobile {
+    .welcome {
+      margin: 1.5rem 0;
+      font-weight: bold;
+    }
+  }
+
   .content-section {
     margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
@@ -21,7 +47,25 @@
         border-radius: 10px;
       }
     }
-  }
+
+    @media @mobile {
+        display: flex;
+        flex-direction: column;
+      
+      .text-content {
+        width:100%;
+        font-weight: bold;
+      }
+      .img-content {
+        width: 100%;
+        img {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        }
+      }
+    }
+  } 
+  
 
   .inverse-content {
     padding-bottom: 30px;
@@ -36,6 +80,10 @@
       padding-right: 1%;
       padding-left: 0;
     }
+
+    @media @mobile {
+      flex-direction: column-reverse;
+    }
   }
 
   .content-destination {
@@ -45,6 +93,11 @@
     img {
       border-radius: 10px;
     }
+
+    @media @mobile {
+      width: 95%;
+      font-weight: bold;
+    }
   }
 
   .content-pick {
@@ -53,9 +106,27 @@
     display: flex;
     justify-content: space-between;
 
+    //invocation of parametric mixin
+    .btn{
+        .signMeUp(@button-bg,@main-bg);
+    }
+
     .destination {
       width: 30%;
       margin-bottom: 30px;
+    }
+
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+      
+
+      .destination {
+        width: 400px;
+        margin: auto;
+        padding: 1.7rem;
+        font-weight: bold;
+      }
     }
   }
 }// home
